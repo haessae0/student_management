@@ -48,7 +48,7 @@ public class MainView extends JFrame {
 	private JScrollPane jScrollPane;
 	private DefaultTableModel myTableModel;
 
-	public static String[] column = { "id", AppConstants.STUDENT_NAME, AppConstants.STUDENT_SNO,
+	public static String[] column = { "번호", AppConstants.STUDENT_NAME, AppConstants.STUDENT_SNO,
 			AppConstants.STUDENT_SEX, AppConstants.STUDENT_DEPARTMETN, AppConstants.STUDENT_HOMETOWN,
 			AppConstants.STUDENT_MARK, AppConstants.STUDENT_EMAIL, AppConstants.STUDENT_TEL };
 	public static int currPageNum = 1;
