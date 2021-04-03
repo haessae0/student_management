@@ -18,36 +18,36 @@ public class AppConstants {
 	public static final String JDBC_DRIVER = "org.sqlite.JDBC";
 
 	// student field
-	public static final String STUDENT_NAME = "姓名";
-	public static final String STUDENT_SNO = "学号";
-	public static final String STUDENT_SEX = "性别";
-	public static final String STUDENT_DEPARTMETN = "院系";
-	public static final String STUDENT_HOMETOWN = "籍贯";
-	public static final String STUDENT_EMAIL = "电子邮件";
-	public static final String STUDENT_TEL = "联系方式";
-	public static final String STUDENT_MARK = "学分";
+	public static final String STUDENT_NAME = "학생이름";
+	public static final String STUDENT_SNO = "학번";
+	public static final String STUDENT_SEX = "성별";
+	public static final String STUDENT_DEPARTMETN = "전공";
+	public static final String STUDENT_HOMETOWN = "주소";
+	public static final String STUDENT_EMAIL = "이메일";
+	public static final String STUDENT_TEL = "전화번호";
+	public static final String STUDENT_MARK = "학점";
 
 	// login view
-	public static final String LOGIN_TITLE = "登录界面";
+	public static final String LOGIN_TITLE = "LOGIN";
 	public static final String LOGIN_USERNAME = "USERNAME";
-	public static final String LOGIN_PASSWORD = "密码";
-	public static final String LOGIN = "登录";
-	public static final String RESET = "重置";
+	public static final String LOGIN_PASSWORD = "PASSWORD";
+	public static final String LOGIN = "LOGIN";
+	public static final String RESET = "RESET";
 
 	// main view
-	public static final String MAINVIEW_TITLE = "学生信息管理系统";
-	public static final String MAINVIEW_PAGENUM_JLABEL_DI = "第 ";
-	public static final String MAINVIEW_PAGENUM_JLABEL_YE = "/99 页";
-	public static final String MAINVIEW_FIND_JLABEL = "查询结果";
-	public static final String MAINVIEW_FIRST = "首页";
-	public static final String MAINVIEW_LAST = "末页";
-	public static final String MAINVIEW_PRE = "上一页";
-	public static final String MAINVIEW_NEXT = "下一页";
+	public static final String MAINVIEW_TITLE = "학생 정보 관리 시스템";
+	public static final String MAINVIEW_PAGENUM_JLABEL_DI = "제 ";
+	public static final String MAINVIEW_PAGENUM_JLABEL_YE = "/99 쪽";
+	public static final String MAINVIEW_FIND_JLABEL = "";
+	public static final String MAINVIEW_FIRST = "맨 처음으로";
+	public static final String MAINVIEW_LAST = "맨 끝으로";
+	public static final String MAINVIEW_PRE = "다음 페이지";
+	public static final String MAINVIEW_NEXT = "이전 페이지";
 	public static final String PARAM_FIND_CONDITION = "";
-	public static final String PARAM_FIND = "查找";
-	public static final String PARAM_ADD = "添加";
-	public static final String PARAM_DELETE = "删除";
-	public static final String PARAM_UPDATE = "更新";
+	public static final String PARAM_FIND = "학생 찾기";
+	public static final String PARAM_ADD = "학생 추가";
+	public static final String PARAM_DELETE = "학생 삭제";
+	public static final String PARAM_UPDATE = "업데이트";
 
 	// add view
 	public static final String ADDVIEW_TITLE = "添加学生信息";
