@@ -36,7 +36,7 @@ public class Student {
 	public void setSno(String sno) {
 		this.sno = sno;
 	}
-
+	
 	public String getName() {
 		return name;
 	}
