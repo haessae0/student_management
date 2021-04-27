@@ -19,6 +19,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+import javax.swing.JOptionPane;
+
 
 import com.up.student.AppConstants;
 import com.up.student.DAO;
@@ -32,10 +34,10 @@ import com.up.student.dao.AdminDAO;
 public class LoginView extends JFrame {
 
 	private static final long serialVersionUID = -5278598737087831336L;
-	private JPanel jPanelCenter, jPanelSouth;
+	private JPanel jPanelCenter, jPanelSouth, jSmall, jSmallSouth;
 	private JTextField username;
 	private JPasswordField password;
-	private JButton loginButton, resetButton;
+	private JButton loginButton, resetButton, exitButton;
 
 	public LoginView() {
 		init();
@@ -104,6 +106,8 @@ public class LoginView extends JFrame {
 		} else {
 			username.setText("");
 			password.setText("");
+			JOptionPane.showMessageDialog(null, "아이디 또는 비밀번호가 올바르지 않습니다.");
+			
 		}
 	}
 
