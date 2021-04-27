@@ -47,7 +47,7 @@ public class AppConstants {
 	public static final String PARAM_FIND = "학생 찾기";
 	public static final String PARAM_ADD = "학생 추가";
 	public static final String PARAM_DELETE = "학생 삭제";
-	public static final String PARAM_UPDATE = "업데이트";
+	public static final String PARAM_SEARCH = "사용설명서";
 
 	// add view
 	public static final String ADDVIEW_TITLE = "학생 정보 추가";
@@ -59,7 +59,7 @@ public class AppConstants {
 	public static final String DELETEVIEW_DELETEBUTTON = "삭제";
 
 	// update view
-	public static final String UPDATEVIEW_TITLE = "학생 업데이트";
-	public static final String UPDATEVIEW_UPDATEBUTTON = "추가";
+	public static final String SEARCHVIEW_TITLE = "사용설명서";
+	public static final String SEARCHVIEW_SEARCHBUTTON = "검색";
 
 }
