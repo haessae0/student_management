@@ -178,7 +178,7 @@ public class StudentDAO extends BaseDAO {
 	}
 
 	// 将list中记录添加到二维数组中
-	private void buildResult(String[][] result, List<Student> stus, int j) {
+	public void buildResult(String[][] result, List<Student> stus, int j) {
 		Student stu = stus.get(j);
 		result[j][0] = String.valueOf(stu.getId());
 		result[j][1] = stu.getName();
@@ -192,7 +192,7 @@ public class StudentDAO extends BaseDAO {
 	}
 
 	// query by sno
-	private int queryBySno(String sno) throws SQLException {
+	public int queryBySno(String sno) throws SQLException {
 		int result = 0;
 		if ("".equals(sno) || sno == null) {
 			return result;
