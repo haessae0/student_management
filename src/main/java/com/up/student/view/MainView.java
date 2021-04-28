@@ -16,6 +16,7 @@ import java.awt.event.KeyEvent;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -28,6 +29,7 @@ import com.up.student.AppConstants;
 import com.up.student.DAO;
 import com.up.student.base.BaseDAO;
 import com.up.student.dao.StudentDAO;
+import com.up.student.model.Student;
 
 /**
  * 模块说明： 首页
@@ -40,7 +42,7 @@ public class MainView extends JFrame {
 	private final int maxPageNum = 99;
 
 	private JPanel jPanelNorth, jPanelSouth, jPanelCenter;
-	private JButton jButtonFirst, jButtonLast, jButtonNext, jButtonPre, jButtonAdd, jButtonDelete, jButtonUpdate,
+	private JButton jButtonFirst, jButtonLast, jButtonNext, jButtonPre, jButtonAdd, jButtonDelete, jButtonHelp,
 			jButtonFind;
 	private JLabel currPageNumJLabel;
 	private JTextField condition;
@@ -95,14 +97,14 @@ public class MainView extends JFrame {
 		});
 		jPanelNorth.add(jButtonDelete);
 		// update
-		jButtonUpdate = new JButton(AppConstants.PARAM_UPDATE);
-		jButtonUpdate.addActionListener(new ActionListener() {
+		jButtonHelp = new JButton(AppConstants.PARAM_SEARCH);
+		jButtonHelp.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				new UpdateView();
 			}
 		});
-		jPanelNorth.add(jButtonUpdate);
+		jPanelNorth.add(jButtonHelp);
 
 		// center panel
 		jPanelCenter = new JPanel();
@@ -190,7 +192,7 @@ public class MainView extends JFrame {
 		this.add(jPanelCenter, BorderLayout.CENTER);
 		this.add(jPanelSouth, BorderLayout.SOUTH);
 
-		setBounds(400, 200, 750, 340);
+		setBounds(400, 200, 770, 340);
 		setResizable(false);
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		setVisible(true);
@@ -220,9 +222,9 @@ public class MainView extends JFrame {
 		seventhColumn.setMaxWidth(30);
 		seventhColumn.setMinWidth(30);
 		TableColumn ninthColumn = jTable.getColumnModel().getColumn(8);
-		ninthColumn.setPreferredWidth(90);
-		ninthColumn.setMaxWidth(90);
-		ninthColumn.setMinWidth(90);
+		ninthColumn.setPreferredWidth(100);
+		ninthColumn.setMaxWidth(100);
+		ninthColumn.setMinWidth(100);
 	}
 
 	private class FindListener extends KeyAdapter {
@@ -236,17 +238,26 @@ public class MainView extends JFrame {
 	}
 
 	private void find() {
+		Student name = new Student();
 		currPageNum = 0;
 		String param = condition.getText();
-		if ("".equals(param) || param == null) {
-			initJTable(MainView.jTable, null);
-			currPageNumJLabel.setText(AppConstants.MAINVIEW_FIND_JLABEL);
-			return;
+		try {
+			if ("".equals(param) || param == null || (((StudentDAO) BaseDAO.getAbilityDAO(DAO.StudentDAO)).queryByName(param).equals(param)) ) {
+				initJTable(MainView.jTable, null);
+				currPageNumJLabel.setText(AppConstants.MAINVIEW_FIND_JLABEL);
+				JOptionPane.showMessageDialog(null,"존재하지 않은 학생의 이름입니다. 다시 확인 해주십시오.");
+			
+				return;
+			}else {
+				String[][] result = ((StudentDAO) BaseDAO.getAbilityDAO(DAO.StudentDAO)).queryByName(param);
+				condition.setText("");
+				initJTable(MainView.jTable, result);
+				currPageNumJLabel.setText(AppConstants.MAINVIEW_FIND_JLABEL);
+			}
+		}catch(NullPointerException e) {
+			JOptionPane.showMessageDialog(null,"존재하지 않은 학생의 이름입니다. 다시 확인 해주십시오.");
+
 		}
-		String[][] result = ((StudentDAO) BaseDAO.getAbilityDAO(DAO.StudentDAO)).queryByName(param);
-		condition.setText("");
-		initJTable(MainView.jTable, result);
-		currPageNumJLabel.setText(AppConstants.MAINVIEW_FIND_JLABEL);
 	}
 
 }
