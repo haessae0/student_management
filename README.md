@@ -1,6 +1,4 @@
 # student
-java swing
-默认测试账户：test/test
 
 자바 스윙을 사용한 학생 관리 프로그램
 
